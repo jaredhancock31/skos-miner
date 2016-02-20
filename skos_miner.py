@@ -1,4 +1,8 @@
-
+"""
+Author: Jared Hancock
+Date: Feb 2016
+Email: jaredhancock31@gmail.com
+"""
 import rdflib
 import json
 import requests
@@ -49,8 +53,8 @@ def main():
     """
     Builds a list of concepts ranked by relevance (relation-frequency)
     """
-    # filename = "pp_project_manuterms.rdf"
-    filename = "testfile.rdf"
+    filename = "pp_project_manuterms.rdf"
+    # filename = "testfile.rdf"
 
     g = rdflib.Graph()
     g = g.parse(location=filename, format="application/rdf+xml")
@@ -67,8 +71,9 @@ def main():
             # TODO collect concepts without any relations?
             pass
 
-    print [i for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k,v): v)]
-
+    # print [i for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k,v): v)]
+    for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k,v): v):
+        print i
 
 if __name__ == "__main__":
     main()
