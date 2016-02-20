@@ -6,19 +6,22 @@ from requests.auth import HTTPBasicAuth
 from skos import RDFLoader
 from collections import defaultdict
 
-# TODO decode unicode strings
+# TODO decode unicode strings?
 
-def query_relateds(concepts):
+
+def parse_json(relateds, rel_table):
     """
-    send http request to PP API to get related queries of a given concept
-    :param concepts: list of concepts to retrieve relateds for
+    parse the json dictionary and increment frequency value for concepts found in the relateds parameter
+
+    :param relateds: list of dicts containing related concepts in the API response
+    :param rel_table: collection (defaultdict) of concepts (keys) and the number of times they have been a related
+                      concept (values)
     :return:
     """
-    related_url = "http://infoneer.poolparty.biz/PoolParty/api/thesaurus/" \
-                  "1DBC67E1-7669-0001-8A4A-F4B06F409540/relateds?concept="
-    for concept in concepts:
-        qurl = related_url+concept
-        result = requests.get(qurl, auth=HTTPBasicAuth('ppuser', 'infoneer'))
+    for concept in relateds:
+        uri = concept['uri']
+        print uri
+        rel_table[uri] += 1
 
 
 def query_related(concept):
@@ -40,13 +43,26 @@ def query_related(concept):
         return json.loads(result.text)
 
 
-def query_rel_test():
+def app_test(rel_table):
+
+    print "rel_table before: "
+    print [i for i in rel_table.items()]
     related_url = "http://infoneer.poolparty.biz/PoolParty/api/thesaurus/" \
                   "1DBC67E1-7669-0001-8A4A-F4B06F409540/relateds?concept="
 
     crown_of_queen = "http://dbpedia.org/resource/Crown_of_Queen_Elizabeth"
-    qurl = related_url + crown_of_queen
-    result = requests.get(qurl, auth=HTTPBasicAuth('ppuser', 'infoneer'))
+
+    result = query_related(crown_of_queen)
+    if result == None:
+        return None
+    else:
+        parse_json(result, rel_table)
+
+    print "rel_table after:"
+    print [i for i in rel_table.items()]
+
+    # qurl = related_url + crown_of_queen
+    # result = requests.get(qurl, auth=HTTPBasicAuth('ppuser', 'infoneer'))
 
     # process495 = "http://infoneer.poolparty.biz/Processes/495"
     # qurl = related_url + process495
@@ -54,11 +70,11 @@ def query_rel_test():
     # if result.text == "[]" or result.text == "[ ]":
     #     print "empty"
 
-    r_json = json.loads(result.text)
-
-
-    print r_json[0]['uri']
-    print type(r_json[0]['uri'])
+    # r_json = json.loads(result.text)
+    #
+    # print type(r_json)
+    # print r_json[0]['uri']
+    # print type(r_json[0]['uri'])
 
 
 def main():
@@ -74,7 +90,9 @@ def main():
     loader = RDFLoader(g)
 
     concepts = loader.getConcepts()
-    query_rel_test()
+    rel_table = defaultdict(int)
+    app_test(rel_table)
+    app_test(rel_table)
     # query_relateds(concepts)
 
 
