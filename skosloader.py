@@ -7,6 +7,9 @@ from skos import RDFLoader
 from collections import defaultdict
 
 # TODO decode unicode strings?
+# For quick testing:
+# crown_of_queen = "http://dbpedia.org/resource/Crown_of_Queen_Elizabeth"         # should have 4 relateds
+# process495 = "http://infoneer.poolparty.biz/Processes/495"                    # should have zero relateds
 
 
 def parse_json(relateds, rel_table):
@@ -20,7 +23,6 @@ def parse_json(relateds, rel_table):
     """
     for concept in relateds:
         uri = concept['uri']
-        print uri
         rel_table[uri] += 1
 
 
@@ -29,7 +31,7 @@ def query_related(concept):
     send http request to PP API to get related concepts of a given concept.
 
     :param concept: URI of concept to query for
-    :return: JSON object containing related concepts, or None
+    :return: JSON object containing related concepts, or None for no relateds
     """
 
     related_url = "http://infoneer.poolparty.biz/PoolParty/api/thesaurus/" \
@@ -43,47 +45,12 @@ def query_related(concept):
         return json.loads(result.text)
 
 
-def app_test(rel_table):
-
-    print "rel_table before: "
-    print [i for i in rel_table.items()]
-    related_url = "http://infoneer.poolparty.biz/PoolParty/api/thesaurus/" \
-                  "1DBC67E1-7669-0001-8A4A-F4B06F409540/relateds?concept="
-
-    crown_of_queen = "http://dbpedia.org/resource/Crown_of_Queen_Elizabeth"
-
-    result = query_related(crown_of_queen)
-    if result == None:
-        return None
-    else:
-        parse_json(result, rel_table)
-
-    print "rel_table after:"
-    print [i for i in rel_table.items()]
-
-    # qurl = related_url + crown_of_queen
-    # result = requests.get(qurl, auth=HTTPBasicAuth('ppuser', 'infoneer'))
-
-    # process495 = "http://infoneer.poolparty.biz/Processes/495"
-    # qurl = related_url + process495
-    # result = requests.get(qurl, auth=HTTPBasicAuth('ppuser', 'infoneer'))
-    # if result.text == "[]" or result.text == "[ ]":
-    #     print "empty"
-
-    # r_json = json.loads(result.text)
-    #
-    # print type(r_json)
-    # print r_json[0]['uri']
-    # print type(r_json[0]['uri'])
-
-
 def main():
-    filename = "pp_project_manuterms.rdf"
-    infile = open(filename)
-
-    # xml_data = infile.read()
-    # g = rdflib.Graph()
-    # result = g.parse(data=xml_data, format="application/rdf+xml")
+    """
+    Builds a list of concepts ranked by relevance (relation-frequency)
+    """
+    # filename = "pp_project_manuterms.rdf"
+    filename = "testfile.rdf"
 
     g = rdflib.Graph()
     g = g.parse(location=filename, format="application/rdf+xml")
@@ -91,9 +58,16 @@ def main():
 
     concepts = loader.getConcepts()
     rel_table = defaultdict(int)
-    app_test(rel_table)
-    app_test(rel_table)
-    # query_relateds(concepts)
+
+    for concept in concepts:
+        relateds = query_related(concept)
+        if relateds is not None:
+            parse_json(relateds, rel_table)
+        else:
+            # TODO collect concepts without any relations?
+            pass
+
+    print [i for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k,v): v)]
 
 
 if __name__ == "__main__":

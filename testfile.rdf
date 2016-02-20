@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:cycAnnot="http://sw.cyc.com/CycAnnotations_v1#"
+	xmlns:cyc="http://sw.cyc.com/concept/"
+	xmlns:dbpedia="http://dbpedia.org/resource/"
+	xmlns:ctag="http://commontag.org/ns#"
+	xmlns:opencyc="http://sw.opencyc.org/concept/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:csw="http://semantic-web.at/ontologies/csw.owl#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:freebase="http://rdf.freebase.com/ns/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:tags="http://www.holygoat.co.uk/owl/redwood/0.1/tags/"
+	xmlns:sesame="http://www.openrdf.org/schema/sesame#"
+	xmlns:fn="http://www.w3.org/2005/xpath-functions#">
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Lathe">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Lathe</skos:prefLabel>
+	<dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</dcterms:hasVersion>
+	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-06-15T21:54:40Z</dcterms:modified>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Lathe"/>
+	<foaf:page rdf:resource="http://www.bloodandsawdust.com/sca/lathes.html"/>
+	<foaf:page rdf:resource="http://lathes.co.uk/page21.html"/>
+	<foaf:page rdf:resource="http://homepages.ihug.com.au/~dispater/turning.htm"/>
+	<foaf:page rdf:resource="http://www.historicgames.com/lathes/springpole.html"/>
+	<foaf:page rdf:resource="http://www.regia.org/woodwork.htm"/>
+	<foaf:page rdf:resource="http://www.stuartking.co.uk/index.php/history-of-the-lathe-part-one-reciprocal-motion/"/>
+	<foaf:page rdf:resource="http://digital.lib.msu.edu/collections/index.cfm?TitleID=274"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Shaper"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Milling_machine"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Mandrel"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Machine_tool"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Rotary_table"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Joseph_Bramah"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Lathe_faceplate"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Turret_lathe"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/James_Fox_%28engineer%29"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Collet"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Tipped_tool"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Atlas_Press_%28tool_company%29"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Indexing_head"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Countersink"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Spindle_%28tool%29"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Van_Norman"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Rose_engine_lathe"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Tailstock"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Planer_%28metalworking%29"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Joseph_Clement"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Joseph_Whitworth"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Tool_bit"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Screw-cutting_lathe"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Machine_taper"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Thomas_Blanchard"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Lathe_center"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Reamer"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Machine_tool_dynamometer"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Holtzapffel"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Lathe_dog"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Chamber_reamer"/>
+	<skos:definition xml:lang="en">A lathe is a machine tool which rotates the workpiece on its axis to perform various operations such as cutting, sanding, knurling, drilling, or deformation with tools that are applied to the workpiece to create an object which has symmetry about an axis of rotation. Lathes are used in woodturning, metalworking, metal spinning, and glassworking. Lathes can be used to shape pottery, the best-known design being the potter's wheel.</skos:definition>
+	<skos:definition xml:lang="en">A lathe is a machine tool which rotates the workpiece on its axis to perform various operations such as cutting, sanding, knurling, drilling, or deformation with tools that are applied to the workpiece to create an object which has symmetry about an axis of rotation. Lathes are used in woodturning, metalworking, metal spinning, and glassworking. Lathes can be used to shape pottery, the best-known design being the potter's wheel. Most suitably equipped metalworking lathes can also be used to produce most solids of revolution, plane surfaces and screw threads or helices. Ornamental lathes can produce three-dimensional solids of incredible complexity. The material can be held in place by either one or two centers, at least one of which can be moved horizontally to accommodate varying material lengths. Other workholding methods include clamping the work about the axis of rotation using a chuck or collet, or to a faceplate, using clamps or dogs. Examples of objects that can be produced on a lathe include candlestick holders, cue sticks, table legs, bowls, baseball bats, musical instruments, crankshafts and camshafts.</skos:definition>
+	<skos:altLabel xml:lang="en">Parting/grooving</skos:altLabel>
+	<skos:altLabel xml:lang="en">Lathes</skos:altLabel>
+	<skos:altLabel xml:lang="en">Lathe (disambiguation)</skos:altLabel>
+	<skos:altLabel xml:lang="en">Bench lathe</skos:altLabel>
+	<skos:altLabel xml:lang="en">Centre lathe</skos:altLabel>
+	<skos:altLabel xml:lang="en">Lathe work</skos:altLabel>
+	<skos:altLabel xml:lang="en">Lathe (tool)</skos:altLabel>
+	<skos:altLabel xml:lang="en">Wood lathe</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Lathe"/>
+	<dcterms:contributor>amerif</dcterms:contributor>
+	<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-06-15T21:54:40Z</dcterms:created>
+	<dcterms:creator>amerif</dcterms:creator>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Bird_Girl">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Bird Girl</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Bronze_sculptures"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Bronze_sculptures"/>
+	<foaf:page rdf:resource="http://www.buzaar.com/birdgirlstatue.html"/>
+	<foaf:page rdf:resource="http://www.smh.com.au/articles/2004/06/07/1086460233798.html?from=storyrhs&amp;oneclick=true"/>
+	<foaf:page rdf:resource="http://www.cliff-chicago.org/thetruestoryofthebirdgirl.htm"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Bird_Girl"/>
+	<foaf:page rdf:resource="http://www.jackleigh.com"/>
+	<foaf:page rdf:resource="http://www.photo.net/bboard/q-and-a-fetch-msg?msg_id=008bFm"/>
+	<skos:definition xml:lang="en">Bird Girl is a sculpture made in 1936 by Sylvia Shaw Judson in Lake Forest, Illinois. It achieved fame when it was featured on the cover of the 1994 novel Midnight in the Garden of Good and Evil. It was sculpted at Ragdale, the summer home of her family.</skos:definition>
+	<skos:altLabel xml:lang="en">The Bird Girl</skos:altLabel>
+	<skos:altLabel xml:lang="en">Bird girl</skos:altLabel>
+	<lat xmlns="http://www.w3.org/2003/01/geo/wgs84_pos#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">32.07735061645508</lat>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Bird_Girl"/>
+	<long xmlns="http://www.w3.org/2003/01/geo/wgs84_pos#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-81.08924865722656</long>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Jamestown_400th_Anniversary_silver_dollar">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Jamestown 400th Anniversary silver dollar</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:United_States_silver_coins"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:United_States_silver_coins"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Jamestown_400th_Anniversary_silver_dollar"/>
+	<skos:definition xml:lang="en">In 2007, the United States Mint released a silver dollar commemorative coin which commemorates the 400th year after the founding of Jamestown. Surcharges from the sale of the Jamestown commemorative were donated to Jamestown-Yorktown Foundation of the Commonwealth of Virginia, the Secretary of the Interior and the Association for the Preservation of Virginia Antiquities to support programs that promote the understanding of the legacies of Jamestown. The coin is being sold as both as a proof coin and an uncirculated coin, with a maximum coinage of 500,000 coins. The coins only mintmark is P, for the Philadelphia mint.</skos:definition>
+	<skos:altLabel xml:lang="en">Jamestown 400th Anniversery Silver Dollar</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Jamestown_400th_Anniversary_silver_dollar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Cullinan_Diamond">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Cullinan Diamond</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Crown_Jewels_of_the_United_Kingdom"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Crown_Jewels_of_the_United_Kingdom"/>
+	<foaf:page rdf:resource="http://www.royal.gov.uk/The%20Royal%20Collection%20and%20other%20collections/TheCrownJewels/Gallery.aspx"/>
+	<foaf:page rdf:resource="http://famousdiamonds.tripod.com/cullinandiamonds.html"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Cullinan_Diamond"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_Jewels_of_the_United_Kingdom"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Imperial_State_Crown"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Sceptre_with_the_Cross"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_jewels"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Stewart_Sapphire"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/The_Personal_Jewel_Collection_of_Elizabeth_II"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Black_Prince%27s_Ruby"/>
+	<skos:definition xml:lang="en">The Cullinan diamond is the largest rough gem-quality diamond ever found, at 3,106.75 carats (621.35 g). The largest polished gem from the stone is named Cullinan I or the Great Star of Africa, and at 530.4 carats (106.1 g) was the largest polished diamond in the world until the 1985 discovery of the Golden Jubilee Diamond, 545.67 carats (109.13 g), also from the Premier Mine. Cullinan I is now mounted in the head of the Sceptre with the Cross. The second largest gem from the Cullinan stone, Cullinan II or the Lesser Star of Africa, at 317.4 carats (63.5 g), is the fourth largest polished diamond in the world. Both gems are in the Crown Jewels of the United Kingdom.</skos:definition>
+	<skos:definition xml:lang="en">The Cullinan diamond is the largest rough gem-quality diamond ever found, at 3,106.75 carats (621.35 g). The largest polished gem from the stone is named Cullinan I or the Great Star of Africa, and at 530.4 carats (106.1 g) was the largest polished diamond in the world until the 1985 discovery of the Golden Jubilee Diamond, 545.67 carats (109.13 g), also from the Premier Mine. Cullinan I is now mounted in the head of the Sceptre with the Cross.</skos:definition>
+	<skos:altLabel xml:lang="en">Cullinan V</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan II</skos:altLabel>
+	<skos:altLabel xml:lang="en">Stars of Africa</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan Diamond VII</skos:altLabel>
+	<skos:altLabel xml:lang="en">Star of Africa Diamond</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan IV</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan VIII</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan Diamonds</skos:altLabel>
+	<skos:altLabel xml:lang="en">Lesser Star of Africa</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan VI</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan III</skos:altLabel>
+	<skos:altLabel xml:lang="en">Great Star of Africa</skos:altLabel>
+	<skos:altLabel xml:lang="en">Star of Africa</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan IX</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan I</skos:altLabel>
+	<skos:altLabel xml:lang="en">Cullinan diamond</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Cullinan_Diamond"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Louis_d%27or">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Louis d'or</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Gold_coins"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Gold_coins"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Louis_d%27or"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Doubloon"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Friedrich_d%27or"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Solidus_%28coin%29"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Napoleon_%28coin%29"/>
+	<skos:definition xml:lang="en">The Louis d'or is any number of French coins first introduced by Louis XIII in 1640. The name derives from the depiction of the portrait of King Louis on one side of the coin; the French royal coat of arms is on the reverse. The coin was replaced by the French franc at the time of the revolution, although a limited number were also minted during the "Bourbon Restoration" under Louis XVIII.</skos:definition>
+	<skos:definition xml:lang="en">The Louis d'or is any number of French coins first introduced by Louis XIII in 1640. The name derives from the depiction of the portrait of King Louis on one side of the coin; the French royal coat of arms is on the reverse. The coin was replaced by the French franc at the time of the revolution, although a limited number were also minted during the "Bourbon Restoration" under Louis XVIII. The actual value of the coins fluctuated according to monetary and fiscal policy, but in 1726 the value was stabilized.</skos:definition>
+	<skos:altLabel xml:lang="en">Double louis d'or</skos:altLabel>
+	<skos:altLabel xml:lang="en">Louis</skos:altLabel>
+	<skos:altLabel xml:lang="en">Louis (coin)</skos:altLabel>
+	<skos:altLabel xml:lang="en">Louis d'Or</skos:altLabel>
+	<skos:altLabel xml:lang="en">Louis-d'or</skos:altLabel>
+	<skos:altLabel xml:lang="en">Double louis</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Louis_d%27or"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Radius_gauge">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Radius gauge</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Metalworking_measuring_instruments"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Metalworking_measuring_instruments"/>
+	<skos:broaderTransitive rdf:resource="http://infoneer.poolparty.biz/Processes/42"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Radius_gauge"/>
+	<skos:definition xml:lang="en">A radius gauge, also known as a fillet gauge, is a tool used to measure the radius of an object. Radius gauges require a bright light behind the object to be measured. The gauge is placed against the edge to be checked and any light leakage between the blade and edge indicates a mismatch that requires correction. A good set of gauges will offer both convex and concave sections, and allow for their application in awkward locations.</skos:definition>
+	<skos:altLabel xml:lang="en">Radius gauges</skos:altLabel>
+	<skos:altLabel xml:lang="en">Fillet gauge</skos:altLabel>
+	<skos:altLabel xml:lang="en">Fillet weld gauge</skos:altLabel>
+	<skos:altLabel xml:lang="en">Radius guages</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Radius_gauge"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Go/no_go_gauge">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Go/no go gauge</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Metalworking_measuring_instruments"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Metalworking_measuring_instruments"/>
+	<skos:broaderTransitive rdf:resource="http://infoneer.poolparty.biz/Processes/42"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Go/no_go_gauge"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Caliper"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Gauge_block"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Snap_gage"/>
+	<skos:definition xml:lang="en">A Go-NoGo gauge refers to an inspection tool used to check a workpiece against its allowed tolerances. Its name derives from its use: the gauge has two tests; the check involves the workpiece having to pass one test (Go) and fail the other (No Go). It is an integral part of the quality process that is used in the manufacturing industry to ensure interchangeability of parts between processes, or even between different manufacturers. A Go NoGo gauge is a measuring tool that does not return a size in the conventional sense, but instead returns a state. The state is either acceptable (the part is within tolerance and may be used) or it is unacceptable (and must be rejected). They are well suited for use in the production area of the factory as they require little skill or interpretation to use effectively and have few, if any, moving parts to be damaged in the often hostile production environment.</skos:definition>
+	<skos:definition xml:lang="en">A Go-NoGo gauge refers to an inspection tool used to check a workpiece against its allowed tolerances. Its name derives from its use: the gauge has two tests; the check involves the workpiece having to pass one test (Go) and fail the other (No Go). It is an integral part of the quality process that is used in the manufacturing industry to ensure interchangeability of parts between processes, or even between different manufacturers.</skos:definition>
+	<skos:altLabel xml:lang="en">Go-NoGo gage</skos:altLabel>
+	<skos:altLabel xml:lang="en">Go nogo</skos:altLabel>
+	<skos:altLabel xml:lang="en">Plug gauge</skos:altLabel>
+	<skos:altLabel xml:lang="en">Go-NoGo gauge</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Go/no_go_gauge"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Warner_&amp;_Swasey_Company">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Warner &amp; Swasey Company</skos:prefLabel>
+	<dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</dcterms:hasVersion>
+	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-05-16T22:29:00Z</dcterms:modified>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Machine_tool_builders"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Machine_tool_builders"/>
+	<skos:broaderTransitive rdf:resource="http://infoneer.poolparty.biz/Processes/48"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Warner_&amp;_Swasey_Company"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Worcester_Reed_Warner"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Milling_machine"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Machine_tool"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Turret_lathe"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Pratt_&amp;_Whitney_Measurement_Systems"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/James_Hartness"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Alfred_Herbert_%28company%29"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Ambrose_Swasey"/>
+	<skos:definition xml:lang="en">The Warner &amp;amp; Swasey Company was an American manufacturer of machine tools, instruments, and special machinery. It operated as an independent business firm, based in Cleveland, from its founding in 1880 until its acquisition in 1980. Originally founded as a partnership in 1880 by Worcester Reed Warner (1846–1929) and Ambrose Swasey (1846–1937), the company was best known for two general types of products: astronomical telescopes and turret lathes.</skos:definition>
+	<skos:definition xml:lang="en">The Warner &amp;amp; Swasey Company was an American manufacturer of machine tools, instruments, and special machinery. It operated as an independent business firm, based in Cleveland, from its founding in 1880 until its acquisition in 1980. Originally founded as a partnership in 1880 by Worcester Reed Warner (1846–1929) and Ambrose Swasey (1846–1937), the company was best known for two general types of products: astronomical telescopes and turret lathes. It also did a large amount of instrument work, such as equipment for astronomical observatories and military instruments. The themes that united these various lines of business were the crafts of toolmaking and instrument-making, which have often overlapped technologically. In the decades after World War II, it also entered the heavy equipment industry with its acquisition of the Gradall brand.</skos:definition>
+	<skos:altLabel xml:lang="en">Warner and Swasey Company</skos:altLabel>
+	<skos:altLabel xml:lang="en">Warner and Swasey</skos:altLabel>
+	<skos:altLabel xml:lang="en">Warner &amp; Swasey</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Warner_&amp;_Swasey_Company"/>
+	<dcterms:contributor>amerif</dcterms:contributor>
+	<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-05-16T22:29:00Z</dcterms:created>
+	<dcterms:creator>amerif</dcterms:creator>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Chalice">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Chalice</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Chalices"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Chalices"/>
+	<foaf:page rdf:resource="http://www.newadvent.org/cathen/03561a.htm"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Chalice"/>
+	<foaf:page rdf:resource="http://www.artofvenice.com/art/murano-stem-glass.htm"/>
+	<foaf:page rdf:resource="http://www.WineGobletsWorld.com/"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/The_Da_Vinci_Code"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Royal_Gold_Cup"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Holy_Grail"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Derrynaflan_Chalice"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Hanging_bowl"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Treasure_of_Gourdon"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Ardagh_Hoard"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/The_Oxburgh_Chalice"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Tassilo_Chalice"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/French_Crown_Jewels"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Water_Newton_Treasure"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Holy_Chalice"/>
+	<skos:definition xml:lang="en">A chalice (from Latin calix, cup, borrowed from Greek kalyx, shell, husk) is a goblet or footed cup intended to hold a drink. In general religious terms, it is intended for drinking during a ceremony.</skos:definition>
+	<skos:altLabel xml:lang="en">Goblet</skos:altLabel>
+	<skos:altLabel xml:lang="en">Wide-mouth goblet</skos:altLabel>
+	<skos:altLabel xml:lang="en">Chalice (disambiguation)</skos:altLabel>
+	<skos:altLabel xml:lang="en">Chalice (cup)</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Chalice"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/File_%28tool%29">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">File (tool)</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Metalworking_hand_tools"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Metalworking_hand_tools"/>
+	<foaf:page rdf:resource="http://books.google.com/books?id=bM01FIZce7IC"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/File_%28tool%29"/>
+	<skos:definition xml:lang="en">A file is a metalworking and woodworking tool used to cut fine amounts of material from a workpiece. It most commonly refers to the hand tool style, which takes the form of a steel bar with a case hardened surface and a series of sharp, parallel teeth. Most files have a narrow, pointed tang at one end to which a handle can be fitted. A similar tool is the rasp. This is an older form, with simpler teeth.</skos:definition>
+	<skos:definition xml:lang="en">A file is a metalworking and woodworking tool used to cut fine amounts of material from a workpiece. It most commonly refers to the hand tool style, which takes the form of a steel bar with a case hardened surface and a series of sharp, parallel teeth. Most files have a narrow, pointed tang at one end to which a handle can be fitted. A similar tool is the rasp. This is an older form, with simpler teeth. As they have larger clearance between teeth, these are usually used on softer, non-metallic materials. Related tools have been developed with abrasive surfaces, such as diamond abrasives or silicon carbide. Because of their similar form and function, these have also been termed 'files'.</skos:definition>
+	<skos:altLabel xml:lang="en">File (metalwork)</skos:altLabel>
+	<skos:altLabel xml:lang="en">File</skos:altLabel>
+	<skos:altLabel xml:lang="en">Bastard file</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/File_%28tool%29"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Button">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Button</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Silver_objects"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Silver_objects"/>
+	<foaf:page rdf:resource="http://www.buttoncountry.com/patents.htm"/>
+	<foaf:page rdf:resource="http://www.nationalbuttonsociety.org/Home.html"/>
+	<foaf:page rdf:resource="http://store.doverpublications.com/0486210308.html"/>
+	<foaf:page rdf:resource="http://www.amazon.com/History-Science-Technology-Discoveries-Inventions/dp/0618221239/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1268403791&amp;sr=1-1"/>
+	<foaf:page rdf:resource="http://hammond-turner.com/"/>
+	<foaf:page rdf:resource="http://lccn.loc.gov/97122120"/>
+	<foaf:page rdf:resource="http://hammond-turner.com/index.php?option=com_content&amp;view=article&amp;id=19&amp;Itemid=9"/>
+	<foaf:page rdf:resource="http://collections.vam.ac.uk/search/?offset=0&amp;limit=15&amp;narrow=&amp;q=button&amp;commit=Search&amp;quality=2&amp;objectnamesearch=&amp;placesearch=&amp;after=&amp;after-adbc=AD&amp;before=&amp;before-adbc=AD&amp;namesearch=&amp;materialsearch=&amp;mnsearch=&amp;locationsearch=&amp;listing_type=image&amp;orderby=0&amp;order=0"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Button"/>
+	<foaf:page rdf:resource="http://www.keephomesteadmuseum.org/"/>
+	<foaf:page rdf:resource="http://www.keephomesteadmuseum.org/button.htm"/>
+	<foaf:page rdf:resource="http://www.mattatuckmuseum.org/"/>
+	<foaf:page rdf:resource="http://trove.nla.gov.au/work/9101082"/>
+	<foaf:page rdf:resource="http://lccn.loc.gov/92063104"/>
+	<foaf:page rdf:resource="http://www.onefivenine.info/buttons.html"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Norwegian_Royal_Regalia"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Jewels_of_the_Nizams"/>
+	<skos:definition xml:lang="en">In modern clothing and fashion design, a button is a small fastener, most commonly made of plastic, but also frequently of seashell, which secures two pieces of fabric together. In archaeology, a button can be a significant artifact. In the applied arts and in craft, a button can be an example of folk art, studio craft, or even a miniature work of art. Buttons are most often attached to articles of clothing but can also be used on containers such as wallets and bags. However, buttons may be sewn onto garments and similar items exclusively for purposes of ornamentation. Buttons serving as fasteners work by slipping through a fabric or thread loop, or by sliding through a buttonhole.</skos:definition>
+	<skos:definition xml:lang="en">In modern clothing and fashion design, a button is a small fastener, most commonly made of plastic, but also frequently of seashell, which secures two pieces of fabric together. In archaeology, a button can be a significant artifact. In the applied arts and in craft, a button can be an example of folk art, studio craft, or even a miniature work of art. Buttons are most often attached to articles of clothing but can also be used on containers such as wallets and bags.</skos:definition>
+	<skos:altLabel xml:lang="en">Mandarin Button</skos:altLabel>
+	<skos:altLabel xml:lang="en">Button (disambiguation)</skos:altLabel>
+	<skos:altLabel xml:lang="en">Buttons</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Button"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Category:Silver_objects">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Silver objects</skos:prefLabel>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Sycee"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Button"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Annapolis_Subscription_Plate"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Category:Silver-gilt_objects"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Woodlawn_Vase"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Derrynaflan_Chalice"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Category:Silver_coins"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Burghley_Nef"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Monza_ampullae"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Syng_inkstand"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Whitecleuch_Chain"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Gundestrup_cauldron"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Lindo_lamp"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/August_Belmont_Trophy"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Ardagh_Hoard"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Sevso_Treasure"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Mildenhall_Treasure"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/The_Oxburgh_Chalice"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Kentucky_Oaks_Trophy"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Risley_Park_Lanx"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Berthouville_Treasure"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Lomellini_Ewer_and_Basin"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Apracaraja_Indravarman%27s_Silver_Reliquary"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Hacksilver"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Coupe_des_Mousquetaires"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Warren_Cup"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Missorium_of_Theodosius_I"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Nef_%28metalwork%29"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Lukovit_Treasure"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Water_Newton_Treasure"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Arlington_Million_Trophy"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/B%C3%BClach_fibula"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Oxus_Treasure"/>
+	<skos:narrower rdf:resource="http://dbpedia.org/resource/Fuller_Brooch"/>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Artworks_in_metal"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Artworks_in_metal"/>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Category:Silver_objects"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Crown_Jewels_of_the_United_Kingdom">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Crown Jewels of the United Kingdom</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Crown_Jewels_of_the_United_Kingdom"/>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Crown_jewels"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Crown_Jewels_of_the_United_Kingdom"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Crown_jewels"/>
+	<foaf:page rdf:resource="http://www.royal.gov.uk/The%20Royal%20Collection%20and%20other%20collections/TheCrownJewels/Overview.aspx"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Crown_Jewels_of_the_United_Kingdom"/>
+	<foaf:page rdf:resource="http://www.royal-magazin.de/england/index.htm"/>
+	<foaf:page rdf:resource="http://hrp.org.uk/TowerOfLondon/"/>
+	<foaf:page rdf:resource="http://www.englishmonarchs.co.uk/crown_jewels.htm"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Cullinan_Diamond"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Honours_of_the_Principality_of_Wales"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Honours_of_Scotland"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Silver-gilt"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_of_Mary_of_Modena"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_of_Queen_Alexandra"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Imperial_State_Crown"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Coronet_of_Charles,_Prince_of_Wales"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Brilliant_%28diamond_cut%29"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Royal_Gold_Cup"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Sceptre_with_the_Cross"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_of_Queen_Elizabeth"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_of_Queen_Mary"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Sword_of_Mercy"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_Jewels_of_Ireland"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Koh-i-Noor"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_of_Scotland"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Small_diamond_crown_of_Queen_Victoria"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Matthew_Paris"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/George_IV_State_Diadem"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Garrard_&amp;_Co"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Stewart_Sapphire"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Diamond"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Jewel_House"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/The_Personal_Jewel_Collection_of_Elizabeth_II"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Sceptre_with_the_Dove"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Black_Prince%27s_Ruby"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/St_Edward%27s_Sapphire"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/St_Edward%27s_Crown"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Coster_Diamonds"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Imperial_Crown_of_India"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Sovereign%27s_Orb"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Inventory"/>
+	<skos:definition xml:lang="en">The collective term Crown Jewels denotes the regalia and vestments worn by the sovereign of the United Kingdom during the coronation ceremony and at other state functions. The term refers to the following objects: the crowns, sceptres (with either the cross or the dove), orbs, swords, rings, spurs, colobium sindonis, dalmatic, armill, and the royal robe or pall, as well as several other objects connected with the ceremony itself. Many of these descend directly from the pre-Reformation period and have a religious and sacral connotation. The vestures donned by the sovereign following the unction, for instance, closely resemble the alb and dalmatic worn by bishops, although the contention that they are meant to confer upon the sovereign an ecclesiastical character is in disrepute among Christian scholars.</skos:definition>
+	<skos:definition xml:lang="en">The collective term Crown Jewels denotes the regalia and vestments worn by the sovereign of the United Kingdom during the coronation ceremony and at other state functions. The term refers to the following objects: the crowns, sceptres (with either the cross or the dove), orbs, swords, rings, spurs, colobium sindonis, dalmatic, armill, and the royal robe or pall, as well as several other objects connected with the ceremony itself.</skos:definition>
+	<skos:altLabel xml:lang="en">Crown Jewels of Great Britain</skos:altLabel>
+	<skos:altLabel xml:lang="en">English Crown Jewels</skos:altLabel>
+	<skos:altLabel xml:lang="en">English regalia</skos:altLabel>
+	<skos:altLabel xml:lang="en">United Kingdom regalia</skos:altLabel>
+	<skos:altLabel xml:lang="en">Sword of Temporal Justice</skos:altLabel>
+	<skos:altLabel xml:lang="en">Crown Jewels of England</skos:altLabel>
+	<skos:altLabel xml:lang="en">Sword of Spiritual Justice</skos:altLabel>
+	<skos:altLabel xml:lang="en">Crown Jewels of the UK</skos:altLabel>
+	<skos:altLabel xml:lang="en">Crown Jewels of GB</skos:altLabel>
+	<skos:altLabel xml:lang="en">Honours of England</skos:altLabel>
+	<skos:altLabel xml:lang="en">British crown jewels</skos:altLabel>
+	<skos:altLabel xml:lang="en">The Small Orb</skos:altLabel>
+	<skos:altLabel xml:lang="en">British regalia</skos:altLabel>
+	<skos:altLabel xml:lang="en">British Crown Jewels</skos:altLabel>
+	<skos:altLabel xml:lang="en">Jewelled Sword of Offering</skos:altLabel>
+	<lat xmlns="http://www.w3.org/2003/01/geo/wgs84_pos#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">51.508056640625</lat>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Crown_Jewels_of_the_United_Kingdom"/>
+	<long xmlns="http://www.w3.org/2003/01/geo/wgs84_pos#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-0.07611110806465149</long>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://dbpedia.org/resource/Honours_of_the_Principality_of_Wales">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Honours of the Principality of Wales</skos:prefLabel>
+	<skos:broader rdf:resource="http://dbpedia.org/resource/Category:Crown_Jewels_of_the_United_Kingdom"/>
+	<skos:broaderTransitive rdf:resource="http://dbpedia.org/resource/Category:Crown_Jewels_of_the_United_Kingdom"/>
+	<foaf:page rdf:resource="http://www.royal.gov.uk/MonarchUK/Symbols/HonoursofthePrincipalityofWales.aspx"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Honours_of_the_Principality_of_Wales"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_Jewels_of_the_United_Kingdom"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Imperial_State_Crown"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Coronet_of_Charles,_Prince_of_Wales"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/Crown_jewels"/>
+	<skos:related rdf:resource="http://dbpedia.org/resource/St_Edward%27s_Crown"/>
+	<skos:definition xml:lang="en">The Honours of the Principality of Wales are the Crown Jewels used at the investiture of Princes of Wales. They include a coronet, a ring, a rod, a sword, a girdle, and a mantle. The base of the Coronet is of the same design as those of the Imperial State Crown and St Edward's Crown. It is made up of four crosses pattee alternating with four fleurs-de-lis. While the Sovereign's crowns have four half arches, the coronet only includes two half arches.</skos:definition>
+	<skos:definition xml:lang="en">The Honours of the Principality of Wales are the Crown Jewels used at the investiture of Princes of Wales. They include a coronet, a ring, a rod, a sword, a girdle, and a mantle. The base of the Coronet is of the same design as those of the Imperial State Crown and St Edward's Crown. It is made up of four crosses pattee alternating with four fleurs-de-lis. While the Sovereign's crowns have four half arches, the coronet only includes two half arches. The arches are surmounted by a ball, on top of which is a cross. Within the frame, which is made of gold, is a velvet cap lined with ermine fur. The present coronet was made for the investiture of Charles in 1969, as the 1911 coronet was still in the possession of the Duke of Windsor. Previous coronets are also retained in the collection. The remaining regalia date from the investiture of Edward, later Edward VIII and then Duke of Windsor, in 1911, when most of the elements of the Honours were redesigned. The original Coronets as worn by the Welsh rulers of the Kingdom of Gwynedd and other Welsh principalities are all lost. Llywelyn's coronet was seized by the English state in 1284 and is known to history. The fates of the Coronets of the rulers of the other princely states, if they ever had them, are not known.</skos:definition>
+	<skos:altLabel xml:lang="en">Honors of the Principality of Wales</skos:altLabel>
+	<skos:altLabel xml:lang="en">Honors of Wales</skos:altLabel>
+	<skos:altLabel xml:lang="en">Crown Jewels of Wales</skos:altLabel>
+	<skos:altLabel xml:lang="en">Honours of Wales</skos:altLabel>
+	<skos:altLabel xml:lang="en">Honours of the principality of wales</skos:altLabel>
+	<dcterms:source rdf:resource="http://dbpedia.org/resource/Honours_of_the_Principality_of_Wales"/>
+</rdf:Description>
+
+</rdf:RDF>
