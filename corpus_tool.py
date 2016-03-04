@@ -13,13 +13,19 @@ from skos import RDFLoader
 from collections import defaultdict
 
 
-def parse_response(response):
+def parse_response(response, conceptList=[]):
     """
     parse json object and create list of concepts and their frequencies
     :param response:
     :return:
     """
-    pass
+
+    for concept in response:
+        name = concept['name']
+        freq = concept['frequency']
+        conceptList.append({'name': name, 'frequency': freq})
+
+    return conceptList
 
 
 def query_corpus(startIdx=0):
@@ -30,7 +36,7 @@ def query_corpus(startIdx=0):
 
     url = "http://infoneer.poolparty.biz/PoolParty/api/corpusmanagement/" \
           "1DBC67E1-7669-0001-8A4A-F4B06F409540/results/" \
-          "concepts?corpusId=corpus:7183eaa9-ddac-4a8f-82b6-1e62a31610fa&startIndex="+startIdx
+          "concepts?corpusId=corpus:7183eaa9-ddac-4a8f-82b6-1e62a31610fa&startIndex="+str(startIdx)
 
     result = requests.get(url, auth=HTTPBasicAuth('ppuser', 'infoneer'))
 
@@ -43,8 +49,16 @@ def query_corpus(startIdx=0):
 def main():
     idx = 0
     response = query_corpus(idx)
-    # TODO parse_response(response)
+    concept_list = []
+
     while response is not None:
+        concept_list += parse_response(response)
         idx += 20
         response = query_corpus(idx)
-        # TODO parse_response(response)
+
+    for f in concept_list:
+        print(f['name'] + ':' + str(f['frequency']))
+
+
+if __name__ == '__main__':
+    main()
