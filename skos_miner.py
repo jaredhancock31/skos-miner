@@ -16,6 +16,9 @@ import sys
 # crown_of_queen = "http://dbpedia.org/resource/Crown_of_Queen_Elizabeth"         # should have 4 relateds
 # process495 = "http://infoneer.poolparty.biz/Processes/495"                    # should have zero relateds
 
+def setup_thesaurus():
+    pass
+
 
 def parse_json(concepts, rel_table):
     """
@@ -99,6 +102,7 @@ def main():
     print " done! "
     for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k,v): v):
         print i
+
 
 if __name__ == "__main__":
     main()
