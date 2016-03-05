@@ -16,8 +16,21 @@ import sys
 # crown_of_queen = "http://dbpedia.org/resource/Crown_of_Queen_Elizabeth"         # should have 4 relateds
 # process495 = "http://infoneer.poolparty.biz/Processes/495"                    # should have zero relateds
 
+
 def setup_thesaurus():
-    pass
+    filename = "pp_project_manuterms.rdf"   # currently 2188 concepts
+    # filename = "testfile.rdf"
+
+    g = rdflib.Graph()
+    g = g.parse(location=filename, format="application/rdf+xml")
+    loader = RDFLoader(g)
+    concepts = loader.getConcepts()  # type is skos.Concepts, despite just being a list
+
+    # make it a list of uri's
+    conceptList = []
+    for c in concepts:
+        conceptList.append(c)
+    return conceptList
 
 
 def parse_json(concepts, rel_table):
@@ -74,33 +87,22 @@ def main():
     """
     Builds a list of concepts ranked by relevance (relation-frequency)
     """
-    filename = "pp_project_manuterms.rdf"   # currently 2188 concepts
-    # filename = "testfile.rdf"
-
-    g = rdflib.Graph()
-    g = g.parse(location=filename, format="application/rdf+xml")
-    loader = RDFLoader(g)
-    concepts = loader.getConcepts()  # type is skos.Concepts, despite just being a list
-
-    # make it a list of uri's
-    conceptList = []
-    for c in concepts:
-        conceptList.append(c)
+    concepts = setup_thesaurus()
     rel_table = defaultdict(int)
 
     max_concepts_per_req = 100
     num_concepts_requested = 0
 
     sys.stdout.write("collecting related metrics")  # make a kind of loading message
-    while num_concepts_requested < len(conceptList):
-        response, num_concepts_requested = query_related(conceptList, num_concepts_requested, 100)
+    while num_concepts_requested < len(concepts):
+        response, num_concepts_requested = query_related(concepts, num_concepts_requested, max_concepts_per_req)
 
         if response is not None:
             parse_json(response, rel_table)
         # print "index : " + num_concepts_requested
 
     print " done! "
-    for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k,v): v):
+    for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k, v): v):
         print i
 
 
