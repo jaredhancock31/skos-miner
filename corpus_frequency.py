@@ -7,10 +7,12 @@ Email: jaredhancock31@gmail.com
 """
 import rdflib
 import json
+import sys
 import requests
 from requests.auth import HTTPBasicAuth
 from skos import RDFLoader
 from collections import defaultdict
+from django.utils.http import urlunquote_plus
 
 
 def parse_response(response, conceptList=[]):
@@ -19,13 +21,21 @@ def parse_response(response, conceptList=[]):
     :param response:
     :return:
     """
-
     for concept in response:
         name = concept['name']
         freq = concept['frequency']
-        conceptList.append({'name': name, 'frequency': freq})
+        conceptList.append({'name': name.lower(), 'frequency': freq})
 
     return conceptList
+
+
+def parse_into_dict(response):
+    concepts = {}
+    for con in response:
+        name = urlunquote_plus(con['name']).encode('utf-8')
+        freq = con['frequency']
+        concepts[name.lower()] = freq
+    return concepts
 
 
 def query_corpus(startIdx=0):
@@ -46,19 +56,42 @@ def query_corpus(startIdx=0):
         return json.loads(result.text)
 
 
+def get_all_frequencies():
+    idx = 0
+    response = query_corpus(idx)
+    concept_list = {}
+
+    sys.stdout.write("collecting frequency metrics")  # make a kind of loading message
+    while response is not None:
+        concept_list.update(parse_into_dict(response))
+        idx += 20
+        response = query_corpus(idx)
+        sys.stdout.write('.')  # make a kind of loading message
+
+    print('done.')
+    # print concept_list.items()
+    # for f in concept_list:
+    #     print(f + ':' + str(concept_list.get(f)))
+
+    return concept_list
+
+
 def main():
     idx = 0
     response = query_corpus(idx)
     concept_list = []
 
+    sys.stdout.write("collecting frequency metrics")  # make a kind of loading message
     while response is not None:
         concept_list += parse_response(response)
         idx += 20
         response = query_corpus(idx)
+        sys.stdout.write(".")  # make a kind of loading message
 
+    print("done.")  # make a kind of loading message
     for f in concept_list:
         print(f['name'] + ':' + str(f['frequency']))
 
 
 if __name__ == '__main__':
-    main()
+    get_all_frequencies()

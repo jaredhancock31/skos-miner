@@ -6,10 +6,13 @@ Email: jaredhancock31@gmail.com
 import rdflib
 import json
 import requests
+import re
 from requests.auth import HTTPBasicAuth
 from skos import RDFLoader
 from collections import defaultdict
 import sys
+from django.utils.encoding import iri_to_uri
+from django.utils.http import urlunquote_plus, urlquote
 
 # TODO decode unicode strings?
 # For quick testing:
@@ -17,8 +20,8 @@ import sys
 # process495 = "http://infoneer.poolparty.biz/Processes/495"                    # should have zero relateds
 
 
-def setup_thesaurus():
-    filename = "pp_project_manuterms.rdf"   # currently 2188 concepts
+def setup_thesaurus(filename="pp_project_manuterms.rdf"):
+    # filename = "pp_project_manuterms.rdf"   # currently 2188 concepts
     # filename = "testfile.rdf"
 
     g = rdflib.Graph()
@@ -51,8 +54,11 @@ def parse_json(concepts, rel_table):
         if 'relateds' in concept:
             relateds = concept['relateds']
             for rel in relateds:
-                # rel_table[rel] += 1
-                rel_table[rel.encode('utf-8')] += 1
+                # scrub the key
+                rel = rel.split('/')[-1]
+                rel = urlunquote_plus(rel).encode('utf-8')
+                rel = rel.replace('_', ' ')
+                rel_table[rel.lower()] += 1
 
 
 def query_related(concepts, index=0, max_param=100):
@@ -83,6 +89,25 @@ def query_related(concepts, index=0, max_param=100):
         return json.loads(result.text), index
 
 
+def get_relateds(file="pp_project_manuterms.rdf"):
+    concepts = setup_thesaurus(file)
+    rel_table = defaultdict(int)
+
+    max_concepts_per_req = 100
+    num_concepts_requested = 0
+
+    sys.stdout.write("collecting relatedness metrics")  # make a kind of loading message
+    while num_concepts_requested < len(concepts):
+        response, num_concepts_requested = query_related(concepts, num_concepts_requested, max_concepts_per_req)
+
+        if response is not None:
+            parse_json(response, rel_table)
+        # print "index : " + num_concepts_requested
+
+    print " done. "
+    return rel_table
+
+
 def main():
     """
     Builds a list of concepts ranked by relevance (relation-frequency)
@@ -104,6 +129,8 @@ def main():
     print " done! "
     for i in sorted(rel_table.iteritems(), reverse=True, key=lambda (k, v): v):
         print i
+
+
 
 
 if __name__ == "__main__":
