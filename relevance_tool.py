@@ -28,6 +28,8 @@ def normalize_on_sum(scores, total=None):
     for key in scores:
         scores[key] = round((float(scores.get(key)) / total), 4)
 
+    return scores
+
 
 def main():
     relateds = thesaurus_related.get_relateds()
@@ -37,6 +39,7 @@ def main():
     total_imp = 0               # sum of total importance in case we want to normalize against the sum
     max_score = 0
 
+    # TODO do we want a union or intersection of the two sets?
     for label, num_related in relateds.items():
         if label in frequencies:
             freq = frequencies.get(label)   # get frequency from corpus list
@@ -58,8 +61,13 @@ def main():
 
     importance_scores = normalize_on_max(importance_scores, max_score)
 
-    for key in importance_scores:
-        print key + ' : ' + str(importance_scores.get(key))
+    print("\n===================================================")
+
+    # for key in importance_scores:
+    #     print key + ' : ' + str(importance_scores.get(key))
+
+    for k in sorted(importance_scores, key=importance_scores.get, reverse=True):
+        print '{0:45} {1:.3f}'.format(k, importance_scores[k])
 
 
 if __name__ == "__main__":
