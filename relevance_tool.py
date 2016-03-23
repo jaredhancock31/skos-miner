@@ -39,20 +39,20 @@ def main():
     total_imp = 0               # sum of total importance in case we want to normalize against the sum
     max_score = 0
 
-    # TODO do we want a union or intersection of the two sets?
     for label, num_related in relateds.items():
         if label in frequencies:
             freq = frequencies.get(label)   # get frequency from corpus list
             importance = round(((0.3 * num_related) + (0.7 * freq)), 4)
             total_imp += importance
+        else:
+            importance = round((0.3 * num_related), 4)
 
-            if importance > max_score:
-                max_score = importance
+        if importance > max_score:
+            max_score = importance
+        importance_scores[label] = importance
 
-            importance_scores[label] = importance
-
-            # ********************** uncomment line below if you want to keep a more comprehensive list ****************
-            # relevance[label] = {'related': num_related, 'frequency': freq, 'importance': importance}
+        # ********************** uncomment line below if you want to keep a more comprehensive list ****************
+        # relevance[label] = {'related': num_related, 'frequency': freq, 'importance': importance}
 
     # sort the dict by highest importance
     # ordered_rel = OrderedDict(sorted(relevance.iteritems(), reverse=True, key=lambda x: x[1]['importance']))
