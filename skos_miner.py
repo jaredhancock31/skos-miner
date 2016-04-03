@@ -17,7 +17,7 @@ def normalize_on_max(merged_list, max_score):
 
 
 def main():
-    related_list = thesaurus_related.get_relateds()
+    related_list = thesaurus_related.get_related()
     frequency_list = corpus_frequency.get_all_frequencies()
     merged_list = {}        # houses union of all sets, overall importance scores
 
