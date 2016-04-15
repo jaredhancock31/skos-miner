@@ -13,20 +13,28 @@ from requests.auth import HTTPBasicAuth
 from skos import RDFLoader
 from collections import defaultdict
 from django.utils.http import urlunquote_plus
+from constants import *
 
 
-def parse_response(response, conceptList=[]):
+def calc_freq_scores(response, thesaurus):
     """
-    parse json object and create list of concepts and their frequencies
-    :param response:
+    given the overall thesaurus, iterate through and fill in frequency data
+    :param thesaurus:
     :return:
     """
+    missing_concepts = {}
     for concept in response:
-        name = concept['name']
-        freq = concept['frequency']
-        conceptList.append({'name': name.lower(), 'frequency': freq})
-
-    return conceptList
+        label = concept['name'].encode('utf-8')
+        freq = concept[FREQUENCY]                                                   # find entry in overall table
+        if label.lower() in thesaurus:
+            thesaurus[label.lower()][FREQUENCY] = freq                                  # update frequency
+            thesaurus[label.lower()][IMPORTANCE_SCORE] += (freq * FREQ_SCORE_FACTOR)    # update overall score
+        else:
+            missing_concepts[label.lower()] = {PREF_LABEL: label,
+                                               FREQUENCY: freq,
+                                               IMPORTANCE_SCORE: (freq * FREQ_SCORE_FACTOR),
+                                               NUM_RELATIONS: None}
+    return missing_concepts
 
 
 def parse_into_dict(response):
@@ -56,14 +64,16 @@ def query_corpus(startIdx=0):
         return json.loads(result.text)
 
 
-def get_all_frequencies():
+def get_corpus_data():
     idx = 0
     response = query_corpus(idx)
     concept_list = {}
+    # missing_concepts = {}
 
     sys.stdout.write("collecting frequency metrics")  # make a kind of loading message
     while response is not None:
         concept_list.update(parse_into_dict(response))
+        # missing_concepts.update(calc_freq_scores(response, thesaurus))
         idx += 20
         response = query_corpus(idx)
         sys.stdout.write('.')  # make a kind of loading message
@@ -74,24 +84,8 @@ def get_all_frequencies():
     #     print(f + ':' + str(concept_list.get(f)))
 
     return concept_list
-
-
-def main():
-    idx = 0
-    response = query_corpus(idx)
-    concept_list = []
-
-    sys.stdout.write("collecting frequency metrics")  # make a kind of loading message
-    while response is not None:
-        concept_list += parse_response(response)
-        idx += 20
-        response = query_corpus(idx)
-        sys.stdout.write(".")  # make a kind of loading message
-
-    print("done.")  # make a kind of loading message
-    for f in concept_list:
-        print(f['name'] + ':' + str(f['frequency']))
+    # return thesaurus, missing_concepts
 
 
 if __name__ == '__main__':
-    get_all_frequencies()
+    get_corpus_data()

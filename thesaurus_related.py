@@ -7,7 +7,7 @@ import sys
 def make_pref_label(uri):
     uri = uri.split('/')[-1]
     uri = uri.replace('_', ' ')
-    return uri
+    return '#'+uri
 
 
 # TODO how should we handle missing concepts? just add them in, or separate from group?
@@ -21,7 +21,7 @@ def calc_related_scores(thesaurus):
     """
     missing_concepts = {}               # concepts found in relateds but not found in our overall thesaurus
 
-    sys.stdout.write('calculating relation metrics...')
+    sys.stdout.write('calculating relation metrics.......')
     for concept in thesaurus:
         if RELATEDS in thesaurus[concept].keys():
             for related in thesaurus[concept][RELATEDS]:
@@ -35,8 +35,9 @@ def calc_related_scores(thesaurus):
                     missing_concepts[rel_uri] = {PREF_LABEL: make_pref_label(rel_uri),
                                                  NUM_RELATIONS: 1,
                                                  FREQUENCY: 0,
+                                                 NUM_EXTERNAL: 0,
                                                  IMPORTANCE_SCORE: REL_SCORE_FACTOR}
-
+    print("done.")
     return thesaurus, missing_concepts
 
 

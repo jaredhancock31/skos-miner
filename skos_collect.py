@@ -41,21 +41,27 @@ def parse_response(concepts, thesaurus):
     :return:
     """
     for node in concepts:
-        uri = node['uri'].encode('utf-8')                               # decode the uri for our thesaurus
-        thesaurus[uri] = {}
+        label = node['uri'].encode('utf-8')                           # decode the uri for our thesaurus
+        # label = label.lower()                                       # use lowercase
+        thesaurus[label] = {}
 
         # create skeleton for later calculations
-        thesaurus[uri].update({IMPORTANCE_SCORE: 0})
-        thesaurus[uri].update({NUM_RELATIONS: 0})
-        thesaurus[uri].update({FREQUENCY: 0})
+        thesaurus[label].update({IMPORTANCE_SCORE: 0.0})
+        thesaurus[label].update({NUM_RELATIONS: 0})
+        thesaurus[label].update({NUM_EXTERNAL: 0})
+        thesaurus[label].update({FREQUENCY: 0})
 
         for key in node:
             utf_key = key.encode('utf-8')                           # get rid of unicode
             value = node[key]                                       # don't encode value, will mess up if it's a list
             if utf_key != 'definitions':                            # skip definitions - too wordy, don't need them
-                thesaurus[uri].update({utf_key: value})             # add key-value pair into that concept entry
+                thesaurus[label].update({utf_key: value})           # add key-value pair into that concept entry
             if utf_key in EXTERNAL_PROPERTIES:                      # if any externally linked data, increment score
-                thesaurus[uri][IMPORTANCE_SCORE] += EXTERNAL_LINK_FACTOR
+                thesaurus[label][IMPORTANCE_SCORE] += EXTERNAL_LINK_FACTOR
+                if isinstance(value, list):
+                    thesaurus[label][NUM_EXTERNAL] += len(value)
+                else:
+                    thesaurus[label][NUM_EXTERNAL] += 1
 
 
 def query_api(uri_list, index=0):
@@ -78,12 +84,13 @@ def query_api(uri_list, index=0):
 
 
 # TODO make collect cmd capable (kwargs)
-def collect():
+def collect(filename):
     """
     Returns a dictionary of all concepts and their respective properties
+    :param filename: RDF file to collect data on
     :return: dict of thesaurus
     """
-    uri_list = get_uris()
+    uri_list = get_uris(filename)
     thesaurus = {}
     num_items_requested = 0
 
